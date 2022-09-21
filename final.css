@@ -1,0 +1,27 @@
+img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+div#buttons{
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.btn{
+    width: 120px;
+    height: 50px;
+    font-size: 15px;
+    background-color: #000096;
+    color:white;
+    font-weight: bold;
+    border-radius: 10px;
+}
