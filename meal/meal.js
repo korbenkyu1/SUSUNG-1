@@ -54,7 +54,7 @@ function updateMenuTable(dayOfWeek, newMenus) {
     for(i in newMenus) {
         const span = document.createElement("span");
         const li = document.createElement("li");
-        span.innerText = newMenus[i];
+        span.innerText = newMenus[i].split('(')[0];
         li.appendChild(span);
         menu.appendChild(li);
     }
@@ -112,10 +112,9 @@ function updateMenuPlanner(date){
             testList.push(menuTable);
             updateMenuTable(DaysOfWeek[i], menuTable);
         });
-
-        dateArray.push(`(${dateToArray(new Date(tempDate.getTime())).join('.')})`);
+        dateArray.push(`(${tempDate.getMonth()+1}.${tempDate.getDate()})`);
         if(i === 4)
-            updateTitle(`${dateToArray(startDate).join('/')}~${dateToArray(tempDate).join('/')}`);
+            updateTitle(`${dateToArray(startDate).join('-')} ~ ${dateToArray(tempDate).join('-')}`);
             
     }
     console.log(testList)
@@ -124,5 +123,4 @@ function updateMenuPlanner(date){
             
 }
 // 최초 호출
-
 updateMenuPlanner(dayTarget);
