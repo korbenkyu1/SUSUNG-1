@@ -129,9 +129,9 @@ updateMenuPlanner(dayTarget);
 let touchstartX = 0;
 let touchendX = 0;
 function checkDirection(){
-    if(touchendX < touchstartX-200)
+    if(touchendX < touchstartX-100)
         handleSwipeWeek({key: 'ArrowRight'});
-    if(touchendX > touchstartX+200)
+    if(touchendX > touchstartX+100)
         handleSwipeWeek({key:'ArrowLeft'});
 }
 document.addEventListener('touchstart', e => {
