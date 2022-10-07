@@ -124,3 +124,20 @@ function updateMenuPlanner(date){
 }
 // 최초 호출
 updateMenuPlanner(dayTarget);
+
+// 모바일용 주 변환
+let touchstartX = 0;
+let touchendX = 0;
+function checkDirection(){
+    if(touchendX < touchstartX-200)
+        handleSwipeWeek({key: 'ArrowRight'});
+    if(touchendX > touchstartX+200)
+        handleSwipeWeek({key:'ArrowLeft'});
+}
+document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+});
+document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection();
+});
